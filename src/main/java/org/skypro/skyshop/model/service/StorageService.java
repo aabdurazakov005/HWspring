@@ -11,9 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-import static java.util.Collections.addAll;
-import static java.util.UUID.randomUUID;
-
 @Service
 public class StorageService {
     private static Map<UUID, Product> products;

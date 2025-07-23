@@ -4,6 +4,8 @@ import org.skypro.skyshop.exeptions.NoSuchProductException;
 import org.skypro.skyshop.model.basket.ProductBasket;
 import org.skypro.skyshop.model.product.Product;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 import java.util.UUID;
 
 @Service
@@ -23,5 +25,8 @@ public class BasketService {
         } catch (NoSuchProductException ex) {
             throw new NoSuchProductException("Не удалось добавить товар в корзину: " + ex.getMessage());
         }
+    }
+    public Map<UUID, Integer> getUserBasket() {
+        return productBasket.getBasketItems();
     }
 }
